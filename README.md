@@ -62,7 +62,7 @@ That's it.
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/founder-second-brain.git my-vault
+git clone https://github.com/jmchalayer/founder-second-brain.git my-vault
 cd my-vault
 ```
 
