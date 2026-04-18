@@ -106,7 +106,7 @@ last_updated: YYYY-MM-DD
 **Cross-linking rules:**
 
 - **Always use full paths** in wiki links: `[[business/overview]]`, not `[[overview]]`. Wiki pages live in subdirectories and name collisions are possible (e.g. both `Projects/Product.md` and `Wiki/business/product.md` could exist).
-- **Use the alias syntax for readable prose:** `[[business/overview|DentaScribe]]` renders as "DentaScribe" while still linking. Prefer this when the page path looks technical and the text should read naturally.
+- **Use the alias syntax for readable prose:** `[[business/overview|the company]]` renders as "the company" while still linking. Prefer this when the page path looks technical and the text should read naturally.
 - **Do not link to source files under `Projects/` or `People/`.** Wiki pages synthesize; they don't point back at raw sources. The `sources` frontmatter field tracks what fed into the page, not the body prose.
 - **The `related` frontmatter** lists 2-4 of the most closely connected wiki pages. Body prose should inline-link naturally beyond that.
 
