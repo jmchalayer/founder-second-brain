@@ -1,0 +1,45 @@
+# Obsidian config and local state (user-specific, not shared)
+.obsidian/
+
+# Obsidian trash
+.trash/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Editor state
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local state (user-specific, not shared)
+.claude/settings.local.json
+.claude/sessions/
+.claude/projects/
+
+# Scratch and local-only folders
+scratch/
+private/
+
+# Node/Python cache (in case anyone adds scripts)
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.local
