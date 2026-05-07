@@ -16,7 +16,33 @@ The best part: I stop going to bed feeling like I have too much on my plate. Eve
 
 This is for founders who are tired of catching up, who want to get ahead and stay there.
 
+## Built portable, by design
+
+This vault is plain markdown in plain folders. Nothing is locked into Claude. The skills work with **Claude Code, Codex CLI, Cursor**, and anything else that respects `CLAUDE.md` or `AGENTS.md`. When the best AI tool changes (and it will), you switch in an hour. Not a month.
+
+That's the principle: the value is in the structure of your second brain, not in any one tool. The tool is replaceable. The brain isn't.
+
 ## How it works
+
+Three layers:
+
+```
+        Claude Code, Codex, Cursor, anything next
+                          │
+                          ▼
+        ┌──────────────────────────────┐
+        │  CLAUDE.md / AGENTS.md       │  ← the map (read first)
+        ├──────────────────────────────┤
+        │  Wiki/                       │  ← synthesis layer
+        ├──────────────────────────────┤
+        │  Soul, Goals, Journal,       │  ← data layer
+        │  People, Projects, Notes     │
+        └──────────────────────────────┘
+```
+
+The agent reads the map first, drills into the wiki when it needs an overview, opens raw data files only when it needs a specific document. Token-efficient, fast, scales.
+
+## How the daily loop works
 
 Daily, weekly, and quarterly rituals that run themselves:
 
@@ -30,19 +56,20 @@ The AI reads your past entries. Pushes back when you overload. Flags patterns yo
 
 ## What it does
 
-Nine skills that run the full loop (daily, weekly, quarterly, ad-hoc):
+Ten skills that run the full loop:
 
 | Skill | When to use it |
 |---|---|
-| `/onboard` | Once. First-time setup. Interviews you and writes your Soul.md, CLAUDE.md, first OKR file, and stub people/project notes. |
+| `/onboard` | Once. First-time setup. Interviews you and writes your Soul.md, CLAUDE.md, AGENTS.md, first OKR file, and stub people/project notes. |
 | `/morning-planning` | Start of each day. Picks 1-3 priorities, connects them to your OKRs, creates the daily planner file. |
 | `/evening-reflection` | End of each day. Reviews what got done, captures wins, mood, learnings. Updates your todo list. |
 | `/weekly-planning` | Friday evening. Reviews the week against OKRs, force-ranks next week's priorities. |
 | `/okr-planning` | Start of each quarter. Closes out last quarter honestly, sets 2-3 objectives with 2-3 KRs each. Force-ranks against capacity. |
 | `/office-hours` | Before you build anything new. YC-style stress-test of an idea, feature, or pivot. Produces a design doc, never code. |
 | `/todo-management` | Anytime. Add, complete, or move tasks in `Todo.md`. |
-| `/meeting` | Whenever you have a transcript (Granola, Otter, Fathom, etc.). Creates a structured meeting note, updates People/, extracts action items. |
+| `/transcript-processing` | Whenever you have a transcript (Granola, Otter, Fathom, etc.). Creates a structured note, updates People/, extracts action items. |
 | `/update-wiki` | Monthly, or when big things change. Refreshes the agent-readable synthesis layer in `Wiki/`. |
+| `/write-skill` | When a workflow gets repeated 3+ times. Codify it as a new skill. |
 
 ## Why this and not PARA or Zettelkasten
 
@@ -54,8 +81,8 @@ The Wiki folder makes your vault legible to other AI agents (chief-of-staff tool
 
 ## Requirements
 
-- [Obsidian](https://obsidian.md)
-- [Claude Code](https://claude.com/claude-code)
+- [Obsidian](https://obsidian.md) (or any markdown editor, but Obsidian's the easiest)
+- An LLM tool with file access. Tested with [Claude Code](https://claude.com/claude-code), [Codex CLI](https://github.com/openai/codex), and [Cursor](https://cursor.com).
 
 That's it.
 
@@ -67,8 +94,8 @@ cd my-vault
 ```
 
 1. Open the folder in Obsidian (`Open folder as vault`).
-2. Open the same folder in Claude Code.
-3. Run `/onboard` in Claude Code.
+2. Open the same folder in Claude Code (or Codex / Cursor).
+3. Run `/onboard` in your AI tool.
 4. Answer the interview questions (takes about 15 minutes).
 5. You're set.
 
@@ -94,7 +121,8 @@ Recommended: [gcal-mcp](https://github.com/nspady/google-calendar-mcp) or any ot
 founder-second-brain/
 ├── Soul.md              # Identity, values, voice. Written by /onboard.
 ├── Todo.md              # Single capture point for open tasks.
-├── CLAUDE.md            # Instructions for Claude Code. Written by /onboard.
+├── CLAUDE.md            # Instructions for Claude. The map.
+├── AGENTS.md            # Same content, mirror for non-Claude agents.
 ├── Goals/               # Quarterly OKR files (one with status: active)
 ├── Journal/             # Daily entries + weekly plans
 ├── Projects/            # One note per active project
@@ -103,20 +131,21 @@ founder-second-brain/
 ├── Wiki/                # Agent-readable synthesis layer
 ├── Templates/           # Templates referenced by skills
 ├── Logs/                # Session summaries
-└── .claude/skills/      # The 7 built-in skills
+└── .claude/skills/      # The 10 built-in skills
 ```
 
 ## The loop
 
 ```
-Quarterly:  /okr-planning        →  close out last quarter, set next 90 days
-Monday AM:  /morning-planning    →  reads Todo.md + OKRs, creates today's daily file
-During day: /todo-management     →  capture tasks as they come up
-            /meeting             →  paste transcripts, get structured notes
-            /office-hours        →  stress-test an idea before you build
-Evening:    /evening-reflection  →  closes tasks, captures mood + learnings
-Friday PM:  /weekly-planning     →  review week, plan next week
-Monthly:    /update-wiki         →  refresh the agent-readable layer
+Quarterly:  /okr-planning             ->  close out last quarter, set next 90 days
+Monday AM:  /morning-planning         ->  reads Todo.md + OKRs, creates today's daily file
+During day: /todo-management          ->  capture tasks as they come up
+            /transcript-processing    ->  paste transcripts, get structured notes
+            /office-hours             ->  stress-test an idea before you build
+Evening:    /evening-reflection       ->  closes tasks, captures mood + learnings
+Friday PM:  /weekly-planning          ->  review week, plan next week
+Monthly:    /update-wiki              ->  refresh the agent-readable layer
+Anytime:    /write-skill              ->  codify a workflow you do often
 ```
 
 ## Writing style
@@ -138,16 +167,20 @@ Everything in `.claude/skills/*/SKILL.md` is plain markdown. Edit it. Change the
 
 Common customisations:
 
-- **Adjust the OKR scope.** The `/onboard` skill defaults to max 3 objectives × 3 KRs. Edit `onboard/SKILL.md` if you want more or fewer.
+- **Adjust the OKR scope.** The `/onboard` skill defaults to max 3 objectives x 3 KRs. Edit `onboard/SKILL.md` if you want more or fewer.
 - **Change the daily template.** `Templates/Daily Planner.md` controls what the morning planning skill writes. Add a gratitude section, habit tracker, whatever you want.
-- **Add skills.** Drop a new folder in `.claude/skills/` with a `SKILL.md` file. Claude Code picks it up automatically.
+- **Add skills.** Run `/write-skill` to scaffold one. Or drop a new folder in `.claude/skills/` with a `SKILL.md` file. Claude Code picks it up automatically.
+
+## Companion: company brain
+
+Once you've got the personal one running, the same architecture works at the team level. See [company-second-brain](https://github.com/jmchalayer/company-second-brain) for the team starter (brand voice, customer interviews, support FAQs, content briefs, all sharable).
 
 ## What's deliberately not here
 
-- **Fyxer / automated email processing** — too specific, varies by tool.
-- **Integrations (calendar, Notion, Linear)** — out of scope for v1. Keep the template stack simple.
-- **Persistent agent memory** — handled by whatever chief-of-staff agent you layer on top (Rebel, Cursor memory, etc.).
-- **Content publishing** — this is the input layer. Publishing belongs in a separate system.
+- **Fyxer / automated email processing** - too specific, varies by tool.
+- **Integrations (calendar, Notion, Linear)** - out of scope for v1. Keep the template stack simple.
+- **Persistent agent memory** - handled by whatever chief-of-staff agent you layer on top.
+- **Content publishing** - this is the input layer. Publishing belongs in a separate system.
 
 ## Contributing
 
