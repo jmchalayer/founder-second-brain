@@ -37,7 +37,7 @@ For startup mode, also ask about product stage:
 
 Output: "Here's what I understand about this project and what you want to explore: [restate back]. Sound right?"
 
-## Phase 2A: Startup Mode — Diagnostic
+## Phase 2A: Startup Mode - Diagnostic
 
 Use when the user is building a real startup or pressure-testing a feature/pivot.
 
@@ -45,11 +45,11 @@ Use when the user is building a real startup or pressure-testing a feature/pivot
 
 **Specificity is the only currency.** Vague answers get pushed. "Enterprises in healthcare" is not a customer. "Everyone needs this" means you can't find anyone. You need a name, a role, a company, a reason.
 
-**Interest is not demand.** Waitlists, signups, "that's interesting" — none of it counts. Behavior counts. Money counts. Panic when it breaks counts. A customer calling you when your service goes down for 20 minutes is demand.
+**Interest is not demand.** Waitlists, signups, "that's interesting" - none of it counts. Behavior counts. Money counts. Panic when it breaks counts. A customer calling you when your service goes down for 20 minutes is demand.
 
 **The user's words beat the founder's pitch.** There's almost always a gap between what the founder says the product does and what users say it does. The user's version is the truth.
 
-**Watch, don't demo.** Guided walkthroughs teach you nothing about real usage. Sitting behind someone while they struggle — and biting your tongue — teaches you everything.
+**Watch, don't demo.** Guided walkthroughs teach you nothing about real usage. Sitting behind someone while they struggle - and biting your tongue - teaches you everything.
 
 **The status quo is your real competitor.** Not the other startup. The cobbled-together spreadsheet-and-Slack workaround your user is already living with. If "nothing" is the current solution, the problem usually isn't painful enough.
 
@@ -95,7 +95,7 @@ Red flags: "People say it's interesting." "We got 500 waitlist signups." "VCs ar
 
 Push until: a specific workflow, hours spent, dollars wasted, tools duct-taped together, people hired to do it manually.
 
-Red flag: "Nothing — there's no solution, that's why the opportunity is so big." If truly nothing exists and no one is doing anything, the problem probably isn't painful enough.
+Red flag: "Nothing - there's no solution, that's why the opportunity is so big." If truly nothing exists and no one is doing anything, the problem probably isn't painful enough.
 
 **Q3: Desperate specificity.** "Name the actual human who needs this most. Their title. What gets them promoted. What gets them fired. What keeps them up at night."
 
@@ -117,7 +117,7 @@ Red flags: "We sent out a survey." "We did demo calls." "Nothing surprising, it'
 
 **Q6: Future-fit.** "If the world looks meaningfully different in 3 years (and it will), does your product become more essential or less?"
 
-Push until: a specific claim about how users' world changes and why that change makes the product more valuable. Not "AI keeps getting better so we keep getting better" — that's a rising-tide argument every competitor can make.
+Push until: a specific claim about how users' world changes and why that change makes the product more valuable. Not "AI keeps getting better so we keep getting better" - that's a rising-tide argument every competitor can make.
 
 ### Escape hatch
 
@@ -127,7 +127,7 @@ If the user says "just do it" or "skip the questions":
 - If they push back again, proceed to Phase 3.
 - A full skip only if they give a fully-formed plan with real evidence. Even then, still run Phase 3 (Premise Challenge) and Phase 4 (Alternatives).
 
-## Phase 2B: Builder Mode — Design Partner
+## Phase 2B: Builder Mode - Design Partner
 
 Use when the user is building for fun, learning, hacking on open source, at a hackathon, or doing research.
 
@@ -157,7 +157,7 @@ Smart-skip: if their opening prompt already answers a question, skip it.
 
 ### Mode upgrade
 
-If the vibe shifts mid-session — they start in builder mode but say "actually I think this could be a real company" or mention customers, revenue, fundraising — upgrade to Startup mode. Say: "Okay, now we're talking. Let me ask you some harder questions." Switch to Phase 2A.
+If the vibe shifts mid-session - they start in builder mode but say "actually I think this could be a real company" or mention customers, revenue, fundraising - upgrade to Startup mode. Say: "Okay, now we're talking. Let me ask you some harder questions." Switch to Phase 2A.
 
 ## Phase 3: Premise challenge
 
@@ -171,9 +171,9 @@ Present premises as clear statements:
 
 ```
 PREMISES:
-1. [statement] — agree/disagree?
-2. [statement] — agree/disagree?
-3. [statement] — agree/disagree?
+1. [statement] - agree/disagree?
+2. [statement] - agree/disagree?
+3. [statement] - agree/disagree?
 ```
 
 Wait for confirmation. If they disagree with any, revise and loop back.
@@ -267,7 +267,7 @@ Same structure, but swap:
 - "Demand evidence" → "What makes this cool"
 - "Target user and narrowest wedge" → "What you'd show someone"
 - "The assignment" → "Next build steps" (concrete build tasks)
-- Keep OKR connection — useful even for side projects
+- Keep OKR connection - useful even for side projects
 
 ## Phase 6: OKR connection and closing
 
@@ -283,7 +283,7 @@ Be direct. If the idea is a shiny distraction from what matters, say so.
 
 One paragraph that weaves specific session callbacks. Reference things the user said. Quote their words back.
 
-**Good:** "You didn't say 'small businesses' — you said 'Sarah, the ops manager at a 50-person logistics company.' That specificity is rare."
+**Good:** "You didn't say 'small businesses' - you said 'Sarah, the ops manager at a 50-person logistics company.' That specificity is rare."
 
 **Bad:** "You showed great specificity in identifying your target user."
 

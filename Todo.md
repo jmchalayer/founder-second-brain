@@ -1,6 +1,6 @@
 # Todo
 
-_Task format: `- [ ] Task description [[Project Name]]` — project link optional, used when the task ties to a project note._
+_Task format: `- [ ] Task description [[Project Name]]` - project link optional, used when the task ties to a project note._
 _Deadline format: append `` `due:YYYY-MM-DD` `` for real external commitments only._
 _Completed format: `- [x] Task` with `` `done:YYYY-MM-DD` ``, moved to Done section._
 
