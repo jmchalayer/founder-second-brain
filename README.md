@@ -56,7 +56,7 @@ The AI reads your past entries. Pushes back when you overload. Flags patterns yo
 
 ## What it does
 
-Ten skills that run the full loop:
+13 skills that run the full loop:
 
 | Skill | When to use it |
 |---|---|
@@ -69,6 +69,9 @@ Ten skills that run the full loop:
 | `/todo-management` | Anytime. Add, complete, or move tasks in `Todo.md`. |
 | `/transcript-processing` | Whenever you have a transcript (Granola, Otter, Fathom, etc.). Creates a structured note, updates People/, extracts action items. |
 | `/update-wiki` | Monthly, or when big things change. Refreshes the agent-readable synthesis layer in `Wiki/`. |
+| `/prd` | When you need to spec a feature, side project, or build. 6-section framework. Saves to `Projects/` or `Notes/`. |
+| `/humanizer` | Before publishing anything written by AI. Strips 29 AI-tells: filler phrases, em dash overuse, promotional language, rule of three, etc. |
+| `/link-sweep` | Periodic vault maintenance. Audits red wikilinks, broken frontmatter, orphans. Fixes the mechanical, flags the judgement calls. |
 | `/write-skill` | When a workflow gets repeated 3+ times. Codify it as a new skill. |
 
 ## Why this and not PARA or Zettelkasten
@@ -131,7 +134,7 @@ founder-second-brain/
 ├── Wiki/                # Agent-readable synthesis layer
 ├── Templates/           # Templates referenced by skills
 ├── Logs/                # Session summaries
-└── .claude/skills/      # The 10 built-in skills
+└── .claude/skills/      # The 13 built-in skills
 ```
 
 ## The loop
