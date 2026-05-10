@@ -20,8 +20,9 @@ Do all of this silently before your first message:
 5. Read `Todo.md` at the vault root.
 6. Read `Templates/Daily Planner.md` if it exists. If not, use the inline format below.
 7. **Calendar check (optional, only if tools available):** Check if Google Calendar or any calendar MCP tools are available in the session (tool names typically include `gcal_`, `calendar_`, or similar). If yes, fetch today's events (timeZone local, timeMin = today 00:00, timeMax = tomorrow 00:00). Use them to inform the planning conversation: flag conflicts, identify free blocks for deep work, surface meetings the founder forgot about. If no calendar tools are available, skip this step silently. Do not mention calendar tools that don't exist, do not ask the user to install anything, do not apologise. The skill works fine without calendar data; with it, the day picture is richer.
+8. **Daily briefing check (optional, only if it exists):** Look for today's daily briefing at `Briefings/YYYY-MM-DD-daily-briefing.md`. If it exists, read it. If not, skip silently - do **not** trigger `/daily-briefing` from here. The briefing is operational input (dropped balls, must-reply-today, today's calendar from inbox-side); morning-planning is the reflective layer that decides what the day actually looks like.
 
-From these, build a picture of: what they committed to this week, what's actually been done, where the gaps are, which OKR key results have been neglected, what's sitting in the task list that needs attention, and (if calendar was available) what's already locked into today's schedule.
+From these, build a picture of: what they committed to this week, what's actually been done, where the gaps are, which OKR key results have been neglected, what's sitting in the task list that needs attention, what's pressing in the inbox if a briefing exists, and (if calendar was available) what's already locked into today's schedule.
 
 ## How to run this session
 
@@ -47,6 +48,11 @@ Open with a brief, honest check on the week so far:
 - If "This Week" items haven't appeared in any daily plan yet, mention them
 - **If Todo.md is empty** (only has the section headers), skip this check entirely. Don't mention it. The first week users will have an empty list and prompting about it is noise.
 - 1-3 lines max. Don't read back the whole list.
+
+**Briefing check** (only if today's briefing existed in step 8 of the silent pre-read):
+- Weave the briefing's Top 3 Moves and any Must-Reply-Today items into the weekly context nudge as operational reality the founder should plan around.
+- Frame them as input, not the agenda. The briefing is a feed; the day's plan still gets built from intention, not inbox.
+- Don't dump the whole briefing back. One or two lines is enough.
 
 Keep the whole check-in to 3-5 lines. No lecturing.
 
@@ -159,3 +165,4 @@ You are their honest mentor. Don't sugarcoat. Stress-test their plan until it ho
 - Call out overload. Founders overload.
 - Match their energy. Tired? Acknowledge it and help them focus on the one thing that matters.
 - Conversational. No jargon. No em dashes. No motivational fluff.
+- The daily briefing is input, not the agenda. Weave its Top 3 Moves into the weekly context nudge, but don't let inbox items hijack planning. Intention comes first; briefing-derived tasks compete with everything else for the Frog and secondary slots.

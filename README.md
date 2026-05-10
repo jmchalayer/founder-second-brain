@@ -56,12 +56,13 @@ The AI reads your past entries. Pushes back when you overload. Flags patterns yo
 
 ## What it does
 
-14 skills that run the full loop:
+15 skills that run the full loop:
 
 | Skill | When to use it |
 |---|---|
 | `/onboard` | Once. First-time setup. Interviews you and writes your Soul.md, CLAUDE.md, AGENTS.md, first OKR file, and stub people/project notes. |
-| `/morning-planning` | Start of each day. Picks 1-3 priorities, connects them to your OKRs, creates the daily planner file. |
+| `/daily-briefing` | First thing in the morning. Surfaces dropped balls, must-reply-today, and today's calendar from your personal comms (email + calendar by default; extends to Slack/WhatsApp if connected). Read-only, evidence-backed. Pairs with `/morning-planning`. |
+| `/morning-planning` | Start of each day, after the briefing. Picks 1-3 priorities, connects them to your OKRs, creates the daily planner file. |
 | `/evening-reflection` | End of each day. Reviews what got done, captures wins, mood, learnings. Updates your todo list. |
 | `/weekly-planning` | Friday evening. Reviews the week against OKRs, force-ranks next week's priorities, audits what could have been delegated to AI. |
 | `/weekly-sweep` | Weekly vault hygiene. Detects drift in People, OKRs, Projects, Wiki, Inbox. Produces a sweep-review file you approve item by item. |
@@ -111,13 +112,23 @@ After cloning, configure these in Obsidian:
 - **Templates plugin:** enable it. Point it at the `Templates/` folder.
 - **File explorer:** put `Soul.md`, `Todo.md`, and the active OKR file in pinned tabs. You'll reference them constantly.
 
-## Optional: calendar integration
+## Optional: comms integration
 
-If you connect a Google Calendar MCP server to Claude Code, the morning and weekly planning skills automatically pull your schedule. Morning plans factor in meetings and free blocks. Weekly planning sees next week's load before you commit to priorities.
+The skills detect MCP tools at runtime and extend automatically when they're connected. Without any of these, the skills still work, they just ask you to describe things in words.
 
-Without it, the skills still work fine, they just ask you to describe your calendar in words.
+**Calendar** (used by `/morning-planning`, `/weekly-planning`, `/daily-briefing`)
+- Connect a Google Calendar MCP server. Morning plans factor in meetings and free blocks. Weekly planning sees next week's load before you commit. The daily briefing surfaces today's schedule alongside the inbox.
+- Recommended: [gcal-mcp](https://github.com/nspady/google-calendar-mcp) or any MCP server that exposes `gcal_list_events` or similar.
 
-Recommended: [gcal-mcp](https://github.com/nspady/google-calendar-mcp) or any other MCP server that exposes `gcal_list_events` or similar. Install per the MCP server's instructions, then the skills detect the tools automatically.
+**Email** (required by `/daily-briefing`)
+- Connect a Gmail MCP server. The briefing pulls inbox state, verifies dropped balls against sent mail, and detects deadlines.
+- Without an email MCP, `/daily-briefing` won't run - it refuses to fake the inbox from vault content alone. The other skills are unaffected.
+
+**Other personal comms** (optional, used by `/daily-briefing`)
+- If you connect a Slack MCP, WhatsApp MCP, or any other personal-comms MCP, `/daily-briefing` extends to those channels: unread DMs, mentions, threads where you owe a reply. Treated as additional input streams that feed the same buckets (Must Reply Today, dropped balls, etc.).
+- Skip any channels you don't use. The briefing scopes to whatever is actually connected.
+
+Install per each MCP server's instructions, then the skills detect the tools automatically.
 
 ## Vault structure
 
@@ -135,14 +146,15 @@ founder-second-brain/
 ├── Wiki/                # Agent-readable synthesis layer
 ├── Templates/           # Templates referenced by skills
 ├── Logs/                # Session summaries
-└── .claude/skills/      # The 14 built-in skills
+└── .claude/skills/      # The 15 built-in skills
 ```
 
 ## The loop
 
 ```
 Quarterly:  /okr-planning             ->  close out last quarter, set next 90 days
-Monday AM:  /morning-planning         ->  reads Todo.md + OKRs, creates today's daily file
+Morning:    /daily-briefing           ->  inbox + calendar, dropped balls, top 3 moves
+            /morning-planning         ->  reads Todo.md + OKRs + briefing, creates daily file
 During day: /todo-management          ->  capture tasks as they come up
             /transcript-processing    ->  paste transcripts, get structured notes
             /office-hours             ->  stress-test an idea before you build
