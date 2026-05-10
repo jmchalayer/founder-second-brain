@@ -50,6 +50,49 @@ Keep it brief. One or two observations, not a lecture. Honest about bad weeks wi
 
 Ask: "Rate the week 1-10. And in one sentence: how was this week?"
 
+### Phase 1.5: AI delegation audit (2-3 min)
+
+A quick weekly pass to compound time savings. The premise: founders working with AI tools should be auditing what could have been delegated, not just what got done. Two questions, captured to `Logs/ai-delegation-backlog.md`. Read that file first so you can spot recurrences across weeks.
+
+**1.5a. What was manual that AI could have done?**
+
+"Looking at this week's work, what did you do manually that an AI agent could have handled?" Pull 1-3 items. Look at completed items in the daily files and at what got rolled or killed in `Todo.md`. If they blank, suggest candidates from your read of the week. Be specific: "drafting the partner intro emails" beats "emails".
+
+**1.5b. What skill, API, or integration would have saved the most time?**
+
+1-2 items. Skills are candidates for `/write-skill`. APIs and integrations get logged for later evaluation - not all of them are worth building, the count over weeks tells you which ones matter.
+
+**1.5c. Track and promote**
+
+For each item: if it's new, add a row to the Active table in `Logs/ai-delegation-backlog.md` with first-seen = current ISO week (e.g. `2026-W19`), count = 1. If it's already there, increment count and update last-seen. If a count hits 3, flag it: "This is the third week. Promote to a skill draft, a build ticket, or kill it?"
+
+If the file doesn't exist yet, create it with this structure:
+
+```markdown
+---
+type: note
+tags: [delegation, ai]
+---
+
+# AI Delegation Backlog
+
+Running list of tasks that could be delegated to AI, and the skills/APIs/integrations that would unlock more delegation. Surfaced weekly during weekly-planning Phase 1.5. Items that recur for 3 weeks get promoted to a skill draft, build ticket, or killed.
+
+## Active
+
+| Item | Type | First seen | Last seen | Count | Notes |
+|---|---|---|---|---|---|
+| ... | task / skill / api | YYYY-WXX | YYYY-WXX | N | ... |
+
+## Promoted
+
+| Item | Outcome | Date |
+|---|---|---|
+| ... | built / killed / shipped as [[skill-name]] | YYYY-MM-DD |
+```
+
+Show the file changes before saving.
+
 ### Phase 2: Plan next week (8-10 min)
 
 One question at a time. Wait for response.
@@ -172,7 +215,7 @@ tags: [weekly-plan, qX-yyyy]
 
 **3c. Confirm.** Show the plan summary. Ask: "Anything to adjust?"
 
-**3d. Close.** One brief observation. Connect something from this week's review to next week's plan, or flag something to watch for. 2-3 sentences. No motivational fluff. Then: "Have a good weekend. Monday's sorted."
+**3d. Close.** One brief observation. Connect something from this week's review to next week's plan, or flag something to watch for. 2-3 sentences. If a delegation-backlog item hit count 3 this week, name it here as "the system improvement to ship". No motivational fluff. Then: "Have a good weekend. Monday's sorted."
 
 ## Tone
 

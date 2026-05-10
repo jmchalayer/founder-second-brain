@@ -56,14 +56,15 @@ The AI reads your past entries. Pushes back when you overload. Flags patterns yo
 
 ## What it does
 
-13 skills that run the full loop:
+14 skills that run the full loop:
 
 | Skill | When to use it |
 |---|---|
 | `/onboard` | Once. First-time setup. Interviews you and writes your Soul.md, CLAUDE.md, AGENTS.md, first OKR file, and stub people/project notes. |
 | `/morning-planning` | Start of each day. Picks 1-3 priorities, connects them to your OKRs, creates the daily planner file. |
 | `/evening-reflection` | End of each day. Reviews what got done, captures wins, mood, learnings. Updates your todo list. |
-| `/weekly-planning` | Friday evening. Reviews the week against OKRs, force-ranks next week's priorities. |
+| `/weekly-planning` | Friday evening. Reviews the week against OKRs, force-ranks next week's priorities, audits what could have been delegated to AI. |
+| `/weekly-sweep` | Weekly vault hygiene. Detects drift in People, OKRs, Projects, Wiki, Inbox. Produces a sweep-review file you approve item by item. |
 | `/okr-planning` | Start of each quarter. Closes out last quarter honestly, sets 2-3 objectives with 2-3 KRs each. Force-ranks against capacity. |
 | `/office-hours` | Before you build anything new. YC-style stress-test of an idea, feature, or pivot. Produces a design doc, never code. |
 | `/todo-management` | Anytime. Add, complete, or move tasks in `Todo.md`. |
@@ -134,7 +135,7 @@ founder-second-brain/
 ├── Wiki/                # Agent-readable synthesis layer
 ├── Templates/           # Templates referenced by skills
 ├── Logs/                # Session summaries
-└── .claude/skills/      # The 13 built-in skills
+└── .claude/skills/      # The 14 built-in skills
 ```
 
 ## The loop
@@ -147,7 +148,9 @@ During day: /todo-management          ->  capture tasks as they come up
             /office-hours             ->  stress-test an idea before you build
 Evening:    /evening-reflection       ->  closes tasks, captures mood + learnings
 Friday PM:  /weekly-planning          ->  review week, plan next week
+Sunday PM:  /weekly-sweep             ->  detect vault drift, approve fixes
 Monthly:    /update-wiki              ->  refresh the agent-readable layer
+            /link-sweep               ->  fix red links, broken frontmatter
 Anytime:    /write-skill              ->  codify a workflow you do often
 ```
 
