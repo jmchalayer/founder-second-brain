@@ -214,4 +214,6 @@ Built on Andrej Karpathy's LLM Wiki pattern for the agent-readable layer. The re
 
 ---
 
-JM / [@jmchalayer](https://twitter.com/jmchalayer) / [jena.so](https://jena.so)
+Built by JM Chalayer, founder of [JENA](https://jena.so).
+
+Want help adapting this to your own workflow, team, or training programme? Find me on [LinkedIn](https://www.linkedin.com/in/jmchalayer/) or [Instagram](https://www.instagram.com/jmchalayer/).
