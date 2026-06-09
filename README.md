@@ -16,6 +16,10 @@ The best part: I stop going to bed feeling like I have too much on my plate. Eve
 
 This is for founders who are tired of catching up, who want to get ahead and stay there.
 
+> *"Brought back my sanity. I sleep better knowing all the stuff rattling around my brain is stored and not lost. Love planning my week and days with it. It's made me way more focused and effective."*
+>
+> — Daniel Van Binsbergen, Founder of DraftPilot.ai
+
 ## Built portable, by design
 
 This vault is plain markdown in plain folders. Nothing is locked into Claude. The skills work with **Claude Code, Codex CLI, Cursor**, and anything else that respects `CLAUDE.md` or `AGENTS.md`. When the best AI tool changes (and it will), you switch in an hour. Not a month.
